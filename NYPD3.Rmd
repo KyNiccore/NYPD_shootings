@@ -95,7 +95,7 @@ NYPD_shootings_with_survive <- NYPD_shootings %>% mutate(died = ifelse(STATISTIC
 ## Only the Latitude and Longitude have NA's so the rest of the data is fine
 NYPD_shootings_by_Boro <- NYPD_shootings_with_survive %>% group_by(BORO) %>% summarize(shootings = sum(shooting), died = sum(died), survived = sum(survived)) %>% ungroup()
 ## Using the nyc boro maps dataset from kjhealy
-boro <- read_rds("https://kjhealy.r-universe.dev/nycmaps/data/nyc_boros_sf/rds")
+boro <- read_rds("https://github.com/KyNiccore/NYPD_shootings/raw/refs/heads/main/nyc_boros_sf.rds")
 ## Rewriting the values in the columns of the boro dataset so I can join it with the shootings data
 boro <- boro %>% rename(BORO = boro_name) %>% mutate(BORO = toupper(BORO))
 ## Filtering out any shootings where there isn't a latitude or longitude (which only is about one hundred shootings)
@@ -159,7 +159,7 @@ I'm now very curious if we broke the map down by precinct since that's a variabl
 
 ```{r precinct_data, echo=FALSE}
 ## the precinct data from kjhealy
-precinct <- read_rds("https://kjhealy.r-universe.dev/nycmaps/data/nyc_police_precincts_sf/rds")
+precinct <- read_rds("https://github.com/KyNiccore/NYPD_shootings/raw/refs/heads/main/nyc_boros_sf.rds")
 ```
 ```{r label_calculations, include=FALSE}
 ## a dataset that will be used to calculate the location of labels for our precinct map
