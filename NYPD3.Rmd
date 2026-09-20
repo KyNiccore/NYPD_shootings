@@ -159,7 +159,7 @@ I'm now very curious if we broke the map down by precinct since that's a variabl
 
 ```{r precinct_data, echo=FALSE}
 ## the precinct data from kjhealy
-precinct <- read_rds("https://github.com/KyNiccore/NYPD_shootings/raw/refs/heads/main/nyc_boros_sf.rds")
+precinct <- read_rds("https://github.com/KyNiccore/NYPD_shootings/raw/refs/heads/main/nyc_police_precincts_sf.rds")
 ```
 ```{r label_calculations, include=FALSE}
 ## a dataset that will be used to calculate the location of labels for our precinct map
